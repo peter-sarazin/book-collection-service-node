@@ -11,10 +11,10 @@ exports.create = async(req, res) => {
       });
     }
   
-    const { firstName, middleName, lastName } = req.body;
+    const { firstName, middleName, lastName, suffix } = req.body;
 
     try {
-        const author = await Author.create({ firstName, middleName, lastName });
+        const author = await Author.create({ firstName, middleName, lastName, suffix });
         return res.status(201).json(author);
     } catch(err) {
         console.log(err);
