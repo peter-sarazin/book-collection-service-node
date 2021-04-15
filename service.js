@@ -11,6 +11,7 @@ service.use(express.json());
 service.use(express.urlencoded({ extended: true }));
 
 require("./service/routes/author.routes.js")(service);
+require("./service/routes/book.routes.js")(service);
 require("./service/routes/publisher.routes.js")(service);
 
 service.listen({port: 5000 }, async () => {

@@ -11,7 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ Publisher }) {
       // define association here
-      this.belongsTo(Publisher);
+      this.belongsTo(Publisher, { foreignKey: 'publisherId' });
+    }
+
+    toJSON() {
+      return { ...this.get(), publisherId: undefined };
     }
   };
   Book.init({
