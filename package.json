@@ -1,0 +1,34 @@
+{
+  "name": "book-collection-service-node",
+  "version": "1.0.0",
+  "description": "Sample Service using Node.js, Express, and Sequelize ORM",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter-sarazin/book-collection-service-node.git"
+  },
+  "keywords": [
+    "book",
+    "collection",
+    "service",
+    "node",
+    "express",
+    "sequelize",
+    "orm"
+  ],
+  "author": "Peter Sarazin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peter-sarazin/book-collection-service-node/issues"
+  },
+  "homepage": "https://github.com/peter-sarazin/book-collection-service-node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
