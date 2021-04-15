@@ -36,3 +36,25 @@ exports.findAll = async(req, res) => {
         return res.status(500).json( { error: 'Error trying to get all publishers'});
     }
 };
+
+// Retrieve a Publisher by publisherId
+exports.findOne = async(req, res) => {
+    const publisherId = req.params.publisherId;
+
+    try {
+        const publisher = await Publisher.findOne({
+            where: { publisherId },
+        })
+
+        if(!publisher) {
+            return res.status(404).json({ message: 'There is no publisher with publisherId: ' + publisherId});
+        } else {
+            return res.status(200).json(publisher);
+        }
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ error: 'Error occurred in findOne()'});
+    }
+}
+

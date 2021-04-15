@@ -8,7 +8,7 @@ module.exports = service => {
     service.get("/authors", authors.findAll);
   
     // Retrieve an Author by authorId
-//    service.get("/authors/:authorId", authors.findOne);
+    service.get("/authors/:authorId", authors.findOne);
   
     // Update an Author by authorId
 //    service.put("/authors/:authorId", authors.update);

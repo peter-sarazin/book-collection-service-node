@@ -32,3 +32,24 @@ exports.findAll = async(req, res) => {
         return res.status(500).json( { error: 'Error trying to get all authors'});
     }
 };
+
+// Retrieve an Author by authorId
+exports.findOne = async(req, res) => {
+    const authorId = req.params.authorId;
+
+    try {
+        const author = await Author.findOne({
+            where: { authorId },
+        })
+
+        if(!author) {
+            return res.status(404).json({ message: 'There is no author with authorId: ' + authorId});
+        } else {
+            return res.status(200).json(author);
+        }
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ error: 'Error occurred in findOne()'});
+    }
+}

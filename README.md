@@ -16,8 +16,8 @@ One option to generate the database schema is that you can Forward Engineer the 
 
  ## Override Sequalize timestamp audit fields
 
- If you do not want audit fields, or want to implement your own custom auditing, then place the following block in config.json
-
+ The sequalize timestamp audit fields have been disabled in this project.  This is done by placing the following block of code in config.json.
+ 
      "define": { 
       "timestamps": false
     }

@@ -8,7 +8,7 @@ module.exports = service => {
     service.get("/publishers", publishers.findAll);
   
     // Retrieve a single Publisher with publisherId
-//    service.get("/publishers/:publisherId", publishers.findOne);
+    service.get("/publishers/:publisherId", publishers.findOne);
   
     // Update a Publisher with publisherId
 //    service.put("/publishers/:publisherId", publishers.update);
