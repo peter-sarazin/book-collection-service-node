@@ -25,7 +25,7 @@ exports.create = async(req, res) => {
 // Retrieve all Books from the database.
 exports.findAll = async(req, res) => {
     try {
-        const books = await Book.findAll({ include: [Publisher]});
+        const books = await Book.findAll({ include: [{ model: Publisher, as: 'publisher' }]});
         return res.status(200).json(books);
     } catch(err) {
         console.log(err);
@@ -39,7 +39,7 @@ exports.findOne = async(req, res) => {
 
     try {
         const book = await Book.findOne({
-            include: [Publisher],
+            include: [{ model: Publisher, as: 'publisher' }],
             where: { bookId },
         })
 

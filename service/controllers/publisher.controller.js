@@ -2,7 +2,7 @@
 
 // const { sequelize, Publisher  } = require( '../models');
 
-const { Publisher } = require( '../models');
+const { Publisher, Book } = require( '../models');
 
 const { isEmpty } = require('lodash');
 
@@ -43,6 +43,7 @@ exports.findOne = async(req, res) => {
 
     try {
         const publisher = await Publisher.findOne({
+            include: [Book],
             where: { publisherId },
         })
 
