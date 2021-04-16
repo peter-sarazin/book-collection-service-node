@@ -1,14 +1,20 @@
 # book-collection-service-node
 Sample Service using Node.js, Express, and Sequelize ORM with MySQL database
 
-## Database design
-Data Model was created using MySQL Workbench and is located in file: design/book-collection-data-model.mwb
+## Database Design and Schema Generation
+[Sequelize](https://sequelize.org) has a CLI (Command Line Interface) which can be helpful for creating tables, etc.., but Sequelize is somewhat opioniated on generating a primary key named "id" for every model and timestamp audit fields createdAt and updatedAt by default.
+
+I took another approach for this project as the database schema for this project was designed and generated using MySQL Workbench.
+
+See: design/book-collection-data-model.mwb
 
 <img src="design/book-collection-data-model.png">
 
 One option to generate the database schema is that you can Forward Engineer the data model to create the database from MySQL Workbench.
 
 The database create sql script file is also included in the design folder with the name db-create.sql
+
+Both the model and the script contain some sample data for use in testing the API.
 
 ## SQL commands to create the configured database user and grant permissions
 
