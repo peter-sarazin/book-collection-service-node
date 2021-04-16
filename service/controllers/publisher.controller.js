@@ -43,7 +43,7 @@ exports.findOne = async(req, res) => {
 
     try {
         const publisher = await Publisher.findOne({
-            include: [Book],
+            include: [{ model: Book, as: 'books' }],
             where: { publisherId },
         })
 

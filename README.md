@@ -2,11 +2,15 @@
 Sample Service using Node.js, Express, and Sequelize ORM with MySQL database
 
 ## Database design
-Data Model was created using MySQL Workbench and is located in file: /design/book-collection-data-model.mwb
+Data Model was created using MySQL Workbench and is located in file: design/book-collection-data-model.mwb
+
+<img src="design/book-collection-data-model.png">
 
 One option to generate the database schema is that you can Forward Engineer the data model to create the database from MySQL Workbench.
 
-## SQL commands to create database user and grant permissions
+The database create sql script file is also included in the design folder with the name db-create.sql
+
+## SQL commands to create the configured database user and grant permissions
 
  create user 'reader'@'localhost' identified by 'password';
 
