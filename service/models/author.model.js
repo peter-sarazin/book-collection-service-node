@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'bookId'
       });
     }
-  };
+  }
   Author.init({
     authorId: {
       field: 'author_id',

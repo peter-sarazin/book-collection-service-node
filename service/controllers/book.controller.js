@@ -39,20 +39,20 @@ exports.findOne = async(req, res) => {
 
     try {
         const book = await Book.findOne({
-            include: [{ model: Publisher, as: 'publisher' }],
-            include: [{
+            include: [{ model: Publisher, as: 'publisher' },
+            {
                 model: Author,
                 as: 'authors',
                 required: false,
-                attributes: ['first_name', 'middle_name', 'last_name', 'suffix'],
+                attributes: ['author_id', 'first_name', 'middle_name', 'last_name', 'suffix'],
                 through: {
                     model: BookAuthor,
                     as: 'booksAuthors',
                     attributes: []
                 }
-            }],
-            where: { bookId },
-            include: [{all: true, nested: true}]
+            }, {all: true, nested: true}
+        ],
+            where: { bookId }
         })
 
         if(!book) {

@@ -81,4 +81,3 @@ The book with bookId 3 has ony one author.
 ## TODO list
 - implement search books by partial title
 - implement search authors by partial name
-- Explore possibility of removing BookAuthor model from json repsonse.

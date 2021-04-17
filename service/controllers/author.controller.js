@@ -43,7 +43,7 @@ exports.findOne = async(req, res) => {
                 model: Book,
                 as: 'books',
                 required: false,
-                attributes: ['title', 'subtitle', 'isbn10', 'isbn13', 'edition'],
+                attributes: ['bookId', 'title', 'subtitle', 'isbn10', 'isbn13', 'edition'],
                 through: {
                     model: BookAuthor,
                     as: 'booksAuthors',
