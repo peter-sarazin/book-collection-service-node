@@ -1,6 +1,7 @@
-const { Book, Publisher } = require( '../models');
+const { Book, Publisher, Author, BookAuthor } = require( '../models');
 
 const { isEmpty } = require('lodash');
+const authorModel = require('../models/author.model');
 
 // Create and Save a new Book
 exports.create = async(req, res) => {
@@ -36,11 +37,25 @@ exports.findAll = async(req, res) => {
 // Retrieve an Book by bookId
 exports.findOne = async(req, res) => {
     const bookId = req.params.bookId;
+    const where = { 'bookId': 1 };
 
     try {
         const book = await Book.findOne({
             include: [{ model: Publisher, as: 'publisher' }],
+            include: [{
+                model: Author,
+                as: 'authors',
+                required: false,
+                attributes: ['first_name', 'middle_name', 'last_name', 'suffix'],
+                through: {
+                    model: BookAuthor,
+                    as: 'booksAuthors'
+
+                }
+
+            }],
             where: { bookId },
+            include: [{all: true, nested: true}]
         })
 
         if(!book) {
