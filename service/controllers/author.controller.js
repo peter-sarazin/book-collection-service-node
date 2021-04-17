@@ -1,4 +1,4 @@
-const { Author } = require( '../models');
+const { Author, Book, BookAuthor } = require( '../models');
 
 const { isEmpty } = require('lodash');
 
@@ -39,7 +39,19 @@ exports.findOne = async(req, res) => {
 
     try {
         const author = await Author.findOne({
-            where: { authorId },
+            include: [{
+                model: Book,
+                as: 'books',
+                required: false,
+                attributes: ['title', 'subtitle', 'isbn10', 'isbn13', 'edition'],
+                through: {
+                    model: BookAuthor,
+                    as: 'booksAuthors',
+                    attributes: []
+                }
+
+            }],
+            where: { authorId }
         })
 
         if(!author) {
