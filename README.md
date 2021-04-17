@@ -1,10 +1,12 @@
 # book-collection-service-node
-Sample Service using Node.js, Express, and Sequelize ORM with MySQL database
+Sample Service using Node.js, Express, and Sequelize ORM with MySQL database.
+
+This project is a work in progress of my journey with learning to create RESTful services using this technology stack.
 
 ## Database Design and Schema Generation
-[Sequelize](https://sequelize.org) has a CLI (Command Line Interface) which can be helpful for creating tables, etc.., but Sequelize is somewhat opioniated on generating a primary key named "id" for every model and timestamp audit fields createdAt and updatedAt by default.
+[Sequelize](https://sequelize.org) has a CLI (Command Line Interface) which can be helpful for getting started with creating models, but Sequelize's default behavior generates a primary key named "id" for every model and timestamp audit fields createdAt and updatedAt by default.  I prefer having more descriptive names for my primary key columns, and I did not want audit timestamp fields for this simple example and had to also disable them in the database config.json file as you will see below.
 
-I took another approach for this project as the database schema for this project was designed and generated using MySQL Workbench.
+I used MySQL Workbench to design and generate the database schema for this project.
 
 See: design/book-collection-data-model.mwb
 

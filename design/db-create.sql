@@ -67,11 +67,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `book_collection`.`book_author`
+-- Table `book_collection`.`books_authors`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `book_collection`.`book_author` ;
+DROP TABLE IF EXISTS `book_collection`.`books_authors` ;
 
-CREATE TABLE IF NOT EXISTS `book_collection`.`book_author` (
+CREATE TABLE IF NOT EXISTS `book_collection`.`books_authors` (
   `book_id` INT NOT NULL,
   `author_id` INT NOT NULL,
   INDEX `fk_book_author_books_idx` (`book_id` ASC) VISIBLE,
@@ -138,6 +138,20 @@ INSERT INTO `book_collection`.`authors` (`author_id`, `first_name`, `middle_name
 INSERT INTO `book_collection`.`authors` (`author_id`, `first_name`, `middle_name`, `last_name`, `suffix`) VALUES (13, 'Chris', NULL, 'Richardson', NULL);
 INSERT INTO `book_collection`.`authors` (`author_id`, `first_name`, `middle_name`, `last_name`, `suffix`) VALUES (14, 'Neal', NULL, 'Ford', NULL);
 INSERT INTO `book_collection`.`authors` (`author_id`, `first_name`, `middle_name`, `last_name`, `suffix`) VALUES (15, 'Travis', NULL, 'Swicegood', NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `book_collection`.`books_authors`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `book_collection`;
+INSERT INTO `book_collection`.`books_authors` (`book_id`, `author_id`) VALUES (1, 4);
+INSERT INTO `book_collection`.`books_authors` (`book_id`, `author_id`) VALUES (1, 5);
+INSERT INTO `book_collection`.`books_authors` (`book_id`, `author_id`) VALUES (2, 4);
+INSERT INTO `book_collection`.`books_authors` (`book_id`, `author_id`) VALUES (2, 6);
+INSERT INTO `book_collection`.`books_authors` (`book_id`, `author_id`) VALUES (3, 6);
 
 COMMIT;
 
