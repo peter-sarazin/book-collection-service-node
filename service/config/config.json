@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "reader",
+    "username": "book_collection_user",
     "password": "password",
     "database": "book_collection",
     "host": "localhost",

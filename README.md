@@ -21,8 +21,8 @@ Both the model and the script contain some sample data for use in testing the AP
 
 ## SQL commands to create the configured database user and grant permissions
 
-    create user 'reader'@'localhost' identified by 'password';
-    grant all on book_collection.* to 'reader'@'localhost';
+    create user 'book_collection_user'@'localhost' identified by 'password';
+    grant all on book_collection.* to 'book_collection_user'@'localhost';
 
  > see: config/config.json
 
@@ -71,12 +71,12 @@ The following relationships have been implemented:
 
 In the test data provide, the books with bookId 1, and bookId 2 each have two authors.
       
-    http://localhost:5000/books/1
-    http://localhost:5000/books/2
+- http://localhost:5000/books/1
+- http://localhost:5000/books/2
 
 The book with bookId 3 has ony one author.
 
-    http://localhost:5000/books/3
+- http://localhost:5000/books/3
 
 ## TODO list
 - implement search books by partial title
