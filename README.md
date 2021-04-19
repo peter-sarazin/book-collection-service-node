@@ -68,6 +68,7 @@ The 3 main resources are books, authors, and publishers.  Each has a findAll cap
 The following relationships have been implemented:
 - Each Book has one Publisher.
 - Each Book has one or more authors.
+- Each Author has one or more books.
 
 In the test data provide, the books with bookId 1, and bookId 2 each have two authors.
       
