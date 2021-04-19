@@ -80,5 +80,8 @@ The book with bookId 3 has ony one author.
 - http://localhost:5000/books/3
 
 ## TODO list
+- implement update
+- implement delete
+- implement patch
 - implement search books by partial title
 - implement search authors by partial name
