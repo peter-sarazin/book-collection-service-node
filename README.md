@@ -47,7 +47,6 @@ Each method in the controller can specify which data to include in the response 
 
 ## Project Structure
 
-> To start service at the command prompt type 'node service'
 - Entry point of application is service.js
 - service.js is in the top level driectory of the project.
 - For now, the service is hardcoded to run on port 5000.  This is specified in the function service.listen()
@@ -57,6 +56,15 @@ Each method in the controller can specify which data to include in the response 
 - controllers are in the project folder service/controllers
 - each Controller specifies which model(s) (persistance layer) is/are required.
 - models are in the project folder service/models.
+
+## Starting the Service
+> To start service at the command prompt type 'node service'
+
+You should see the following output on successfull startup:
+
+  Book Collection Service running on http://localhost:5000
+  Executing (default): SELECT 1+1 AS result
+  database connection successful.
 
 ## Test Data Scenarios
 
