@@ -21,9 +21,10 @@ Both the model and the script contain some sample data for use in testing the AP
 
 ## SQL commands to create the configured database user and grant permissions
 
-    create user 'book_collection_user'@'localhost' identified by 'password';
-    grant all on book_collection.* to 'book_collection_user'@'localhost';
-
+```sql
+create user 'book_collection_user'@'localhost' identified by 'password';
+grant all on book_collection.* to 'book_collection_user'@'localhost';
+```
  > see: config/config.json
 
 ## Sequelize ORM
@@ -33,9 +34,11 @@ Both the model and the script contain some sample data for use in testing the AP
 
  The sequalize timestamp audit fields have been disabled in this project.  This is done by placing the following block of code in config.json.
  
-    "define": { 
-      "timestamps": false
-    }
+```json
+"define": { 
+  "timestamps": false
+}
+```
 
 > see: config.json in this project for example.
 
@@ -58,13 +61,15 @@ Each method in the controller can specify which data to include in the response 
 - models are in the project folder service/models.
 
 ## Starting the Service
-> To start service at the command prompt type 'node service'
+To start service at the command prompt type the following:
+    
+    > node service
 
 You should see the following output on successfull startup:
 
-  Book Collection Service running on http://localhost:5000
-  Executing (default): SELECT 1+1 AS result
-  database connection successful.
+    Book Collection Service running on http://localhost:5000
+    Executing (default): SELECT 1+1 AS result
+    database connection successful.
 
 ## Test Data Scenarios
 
