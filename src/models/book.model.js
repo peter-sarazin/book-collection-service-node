@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'bookId',
         otherKey: 'authorId'
       });
-    };
+    }
 
     toJSON() {
       return { ...this.get(), publisherId: undefined };
     }
-  };
+  }
   Book.init({
     bookId: {
       field: 'book_id',

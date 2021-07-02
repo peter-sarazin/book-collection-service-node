@@ -5,7 +5,7 @@ module.exports = service => {
     service.post("/books", books.create);
   
     // Retrieve all Books
-    service.get("/books", books.findAll);
+    service.get("/books", books.findAllBooks);
   
     // Retrieve an Book by bookId
     service.get("/books/:bookId", books.findOne);

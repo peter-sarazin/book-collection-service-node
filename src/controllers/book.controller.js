@@ -1,4 +1,5 @@
 const { Book, Publisher, Author, BookAuthor } = require( '../models');
+const bookService = require("../services/book.service.js")
 
 const { isEmpty } = require('lodash');
 
@@ -23,9 +24,9 @@ exports.create = async(req, res) => {
 };
 
 // Retrieve all Books from the database.
-exports.findAll = async(req, res) => {
+exports.findAllBooks = async (_req, res) => {
     try {
-        const books = await Book.findAll({ include: [{ model: Publisher, as: 'publisher' }]});
+        const books = await bookService.findAllBooks();
         return res.status(200).json(books);
     } catch(err) {
         console.log(err);
