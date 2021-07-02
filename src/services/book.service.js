@@ -1,18 +1,18 @@
-const { Book, Publisher } = require( '../models');  // , Author, BookAuthor
+const { Book, Publisher } = require( '../models');
 
 
-
-// const { isEmpty } = require('lodash');
-
-// Retrieve all Books from the database.
-findAllBooks = async() => {
+/**
+ * Retrieve all Books from the database.
+ * 
+ * @returns 
+ */
+exports.findAllBooks = async() => {
     try {
         const books = await Book.findAll({ include: [{ model: Publisher, as: 'publisher' }]});
         return books;
     } catch(err) {
         console.log(err);
-        return Reject(err);
+        return err;
     }
-};
+}
 
-module.exports = { findAllBooks };
