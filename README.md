@@ -54,11 +54,11 @@ Each method in the controller can specify which data to include in the response 
 - service.js is in the top level driectory of the project.
 - For now, the service is hardcoded to run on port 5000.  This is specified in the function service.listen()
 -  routes aka endpoints are imported into service.js in the require() statements.
-- routes are in the project folder service/routes
+- routes are in the project folder src/routes
 - each route specifies the implememting controller.
-- controllers are in the project folder service/controllers
+- controllers are in the project folder src/controllers
 - each Controller specifies which model(s) (persistance layer) is/are required.
-- models are in the project folder service/models.
+- models are in the project folder src/models.
 
 ## Starting the Service
 To start service at the command prompt type the following:
