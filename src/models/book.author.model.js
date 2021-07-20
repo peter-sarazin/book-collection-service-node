@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class BookAuthor extends Model {
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     // eslint-disable-next-line no-unused-vars
-    static associate({ models }) {
+    static associate({models}) {
       // define association here
     }
   }
@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
     bookId: {
       field: 'book_id',
       type: DataTypes.INTEGER,
-      primaryKey: true
+      primaryKey: true,
     },
     authorId: {
       field: 'author_id',
       type: DataTypes.INTEGER,
-      primaryKey: true
-    }
+      primaryKey: true,
+    },
   }, {
     sequelize,
     tableName: 'books_authors',

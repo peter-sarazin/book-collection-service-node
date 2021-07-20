@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Author extends Model {
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         through: 'BookAuthor',
         as: 'books',
         foreignKey: 'authorId',
-        otherKey: 'bookId'
+        otherKey: 'bookId',
       });
     }
   }
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       field: 'author_id',
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     firstName: {
       field: 'first_name',
@@ -42,9 +42,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     suffix: {
-       type: DataTypes.STRING(25),
+      type: DataTypes.STRING(25),
       allowNull: true,
-    },  }, {
+    } }, {
     sequelize,
     tableName: 'authors',
     modelName: 'Author',
