@@ -94,7 +94,7 @@ The book with bookId 3 has ony one author.
 
 ## TODO list
 - introduce unit tests and mocks to the project
-- intoroduce Joi validation to the project
+- introduce Joi validation to the project
 - implement update
 - implement delete
 - implement patch
