@@ -3,6 +3,9 @@ const {
   Model,
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
+  /**
+   * persistence layer representation of publisher.
+   */
   class Publisher extends Model {
     /**
      * Helper method for defining associations.
