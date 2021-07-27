@@ -93,6 +93,8 @@ The book with bookId 3 has ony one author.
 - http://localhost:5000/books/3
 
 ## TODO list
+- introduce unit tests and mocks to the project
+- introduce Joi validation to the project
 - implement update
 - implement delete
 - implement patch
