@@ -25,9 +25,11 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
     },
     name: {
+      // eslint-disable-next-line new-cap
       type: DataTypes.STRING(45),
       allowNull: false,
     },
+    // eslint-disable-next-line new-cap
     url: DataTypes.STRING(125),
   }, {
     sequelize,
